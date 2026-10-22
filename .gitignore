@@ -11,3 +11,4 @@ frontend/.env.local
 *.db
 .DS_Store
 tsbuildinfo
+*.tsbuildinfo

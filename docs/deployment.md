@@ -1,0 +1,2 @@
+# Deployment
+Local: backend `uvicorn app.main:app --port 8000`, frontend `npm run dev`. Docker: `docker compose up --build` (Postgres + backend + frontend). Production: frontend on Vercel/Node host, backend on Render/Fly/Railway, managed Postgres via DATABASE_URL (`postgresql+psycopg://…`), run `alembic upgrade head`, HTTPS everywhere, ENVIRONMENT=production, explicit CORS_ORIGINS/FRONTEND_URL, register production OAuth redirect URIs. Rotate secrets by updating env + restarting; revoke GitHub/Google tokens in their consoles.

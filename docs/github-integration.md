@@ -1,0 +1,2 @@
+# GitHub integration (read-only)
+OAuth web flow, scope `repo read:user`, state validated server-side. Access token encrypted (Fernet, key from TOKEN_ENCRYPTION_KEY or derived from SESSION_SECRET) in `identities.encrypted_access_token`; never returned by any API or logged. Setup: GitHub → Settings → Developer settings → OAuth Apps → callback `http://localhost:8000/api/v1/github/callback`; set GITHUB_CLIENT_ID/SECRET/REDIRECT_URI. Handles 401 (revoked), 403 rate-limit, 404 (no access), pagination (per_page/page). No pushes, comments, or merges — ever.

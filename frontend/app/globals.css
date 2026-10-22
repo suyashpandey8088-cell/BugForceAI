@@ -1,0 +1,39 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+
+:root{
+  --font-display:"Space Grotesk","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-sans:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono","Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#F7F4EC; --surface:#FFFFFF; --surface2:#ECE9E1; --text:#202126; --muted:#626571;
+  --accent:#D94E25; --accent2:#3559D8; --accent3:#4d7c0f; --border:#202126;
+}
+.dark{
+  --bg:#111318; --surface:#191C23; --surface2:#222631; --text:#F5F3ED; --muted:#A8ADBA;
+  --accent:#FF6B35; --accent2:#5B7CFA; --accent3:#C5F467; --border:#3a4152;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans),sans-serif}
+.bg-app{background:var(--bg)} .bg-surface{background:var(--surface)} .bg-surface2{background:var(--surface2)}
+.text-app{color:var(--text)} .text-muted2{color:var(--muted)} .text-accent{color:var(--accent)} .text-accent2{color:var(--accent2)} .text-accent3{color:var(--accent3)}
+.bg-accent{background:var(--accent)} .bg-accent2{background:var(--accent2)} .bg-accent3{background:var(--accent3)}
+.border-app{border-color:var(--border)}
+.panel{background:var(--surface);border:2px solid var(--border)}
+.panel-flat{background:var(--surface);border:1px solid var(--border)}
+.hard-shadow{box-shadow:6px 6px 0 var(--border)}
+.hard-shadow-sm{box-shadow:3px 3px 0 var(--border)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;border:2px solid var(--border);padding:.6rem 1.1rem;transition:transform .08s, box-shadow .08s;cursor:pointer}
+.btn:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--border)!important}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:4px 4px 0 var(--border)}
+.btn-ghost{background:var(--surface);color:var(--text)}
+.btn-blue{background:var(--accent2);color:#fff;box-shadow:4px 4px 0 var(--border)}
+.input{width:100%;background:var(--surface);border:2px solid var(--border);padding:.65rem .8rem;color:var(--text);outline:none}
+.input:focus{box-shadow:3px 3px 0 var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--border);padding:.15rem .45rem}
+.sev-critical{background:#dc2626;color:#fff}.sev-high{background:var(--accent);color:#fff}
+.sev-medium{background:#f59e0b;color:#111}.sev-low{background:var(--accent2);color:#fff}.sev-info{background:var(--surface2);color:var(--text)}
+.mono-strip{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.headline{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;line-height:.95}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+::selection{background:var(--accent);color:#fff}
+.tick-bg{background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:44px 44px;opacity:.07}

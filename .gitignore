@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.local
+backend/.env
+frontend/.env.local
+*.db
+.DS_Store
+tsbuildinfo
+*.tsbuildinfo

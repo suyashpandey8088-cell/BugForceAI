@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment: { POSTGRES_DB: bugforge, POSTGRES_USER: bugforge, POSTGRES_PASSWORD: bugforge }
+    volumes: [pgdata:/var/lib/postgresql/data]
+    ports: ["5432:5432"]
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://bugforge:bugforge@db:5432/bugforge
+      FRONTEND_URL: http://localhost:3000
+      CORS_ORIGINS: http://localhost:3000
+    env_file: [./backend/.env]
+    ports: ["8000:8000"]
+    depends_on: [db]
+  frontend:
+    build: ./frontend
+    environment: { BACKEND_URL: http://backend:8000 }
+    ports: ["3000:3000"]
+    depends_on: [backend]
+volumes: { pgdata: {} }
